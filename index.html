@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <title>Food Point Finder - Discover Amazing Food Spots</title>
+    
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+   <link rel="stylesheet" href="/styles/custom.css">
+  </head>
+
+  <body>
+    
+
+
+    
+
+    <!-- just add a navbar just to see what happed  -->
+
+
+  
+    <!-- Header -->
+    <header class="header">
+      <div class="auth-buttons">
+        <a href="/pages/add-restaurant.html" class="btn btn-add-restaurant">
+          <i class="fas fa-plus"></i>
+          Add Restaurant
+        </a>
+        <a href="/pages/signup.html" class="btn btn-login">Login</a>
+        <!-- <a href="#" class="btn btn-signup">Sign Up</a> -->
+        
+      </div>
+    </header> 
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <a href="#" class="logo"><i class="fa-solid fa-location-dot"></i> Food Point Finder</a>
+      <div class="tagline">Travel-Based Food Discovery Platform</div>
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for restaurants, cuisines, or locations..."
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Restaurant Listings -->
+    <section class="restaurants-section"> 
+      <h2 class="section-title">Featured Restaurants</h2>
+      <div class="restaurants-grid">
+        <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Bella Vista Italian</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        123 Main Street, Downtown
+                    </div>
+                    <p class="restaurant-description">
+                        Authentic Italian cuisine featuring handmade pasta, wood-fired pizzas, and traditional recipes
+                        passed down through generations. Perfect for romantic dinners and family gatherings.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Sarah M.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Amazing carbonara and the tiramisu was to die for! The
+                                    atmosphere is so romantic and authentic."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Mike R.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Great atmosphere, authentic flavors. The wood-fired pizza was
+                                    exceptional. Will definitely return!"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://plus.unsplash.com/premium_photo-1672363353881-68c8ff594e25?w=600&h=650&fit=crop&crop=center"
+                    alt="Bella Vista Italian Restaurant" class="restaurant-image">
+            </div>
+
+        <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Sakura Sushi Bar</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        456 Oak Avenue, Midtown
+                    </div>
+                    <p class="restaurant-description">
+                        Fresh sushi and sashimi prepared by master chefs using the finest ingredients. Experience
+                        traditional Japanese dining in a modern, elegant setting.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Emily K.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Best sushi in town! The salmon roll was incredibly fresh and
+                                    the presentation was beautiful."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">James L.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Exceptional quality and presentation. The chef's special
+                                    omakase was an unforgettable experience!"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
+                    alt="Sakura Sushi Bar" class="restaurant-image">
+            </div>
+
+        <div class="restaurant-card">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">The Burger Joint</h3>
+            <div class="restaurant-address">
+              <i class="fas fa-map-marker-alt"></i>
+              789 Pine Street, Westside
+            </div>
+            <p class="restaurant-description">
+              Gourmet burgers made with locally-sourced beef, artisanal buns,
+              and creative toppings. From classic cheeseburgers to exotic
+              combinations that will surprise your taste buds.
+            </p>
+            <div class="reviews-container">
+              <div class="reviews-title">
+                <i class="fas fa-star"></i>
+                Customer Reviews
+              </div>
+              <div class="reviews-list">
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Alex P.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★☆</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Juicy burgers and crispy fries. The bacon avocado burger is
+                    a must-try! Great casual atmosphere."
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Maria G.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Best burger I've had in years. The truffle fries were
+                    amazing too. Great value for money!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=600&fit=crop&crop=center"
+            alt="The Burger Joint"
+            class="restaurant-image"
+          />
+        </div>
+
+        <div class="restaurant-card">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Spice Garden Indian</h3>
+            <div class="restaurant-address">
+              <i class="fas fa-map-marker-alt"></i>
+              321 Elm Drive, Eastside
+            </div>
+            <p class="restaurant-description">
+              Authentic Indian cuisine with rich spices and traditional cooking
+              methods. From mild kormas to fiery vindaloos, we offer dishes from
+              every region of India.
+            </p>
+            <div class="reviews-container">
+              <div class="reviews-title">
+                <i class="fas fa-star"></i>
+                Customer Reviews
+              </div>
+              <div class="reviews-list">
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">David W.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Incredible flavors! The butter chicken and garlic naan were
+                    perfection. Authentic spices!"
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Priya S.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Tastes just like home! The biryani was exceptional and the
+                    service was wonderful. Highly recommend!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=600&fit=crop&crop=center"
+            alt="Spice Garden Indian Restaurant"
+            class="restaurant-image"
+          />
+        </div>
+      </div>
+
+        <a href="pages/restaurants.html" class="view-all-btn">View All Restaurants</a>
+    </section>
+
+    <!-- Our Motive Section -->
+    <section class="motive-section">
+      <div class="motive-content">
+        <h2 class="motive-title">Our Motive
+        <p class="motive-text"></h2>
+         Food Point Finder helps food lovers discover hidden gems and local favorites, 
+         from comfort food to fine dining. We connect you to unique dining experiences, 
+         guiding you to explore diverse flavors and uncover your next favorite spot.
+        </p>
+        <!-- <p class="motive-text">
+          Whether you're craving familiar comfort food or looking to adventure
+          into new flavors, we're here to guide you to your next great dining
+          experience. From hole-in-the-wall eateries to fine dining
+          establishments, every restaurant has a story to tell and flavors to
+          share.
+        </p> -->
+        
+        <p class="motive-text">
+          Join our community of food lovers and discover the joy of finding your new favorite spot, one meal at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="pages/contact.html" class="footer-link">Contact & Support</a>
+        </div>
+        <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
+          <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
+        </a>
+        <div class="footer-copyright">
+          © 2024 Food Point Finder. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Search functionality
+      document
+        .querySelector(".search-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            performSearch();
+          }
+        });
+
+      document
+        .querySelector(".search-btn")
+        .addEventListener("click", performSearch);
+
+      function performSearch() {
+        const query = document.querySelector(".search-input").value;
+        if (query.trim()) {
+          // In a real application, this would trigger a search
+          console.log("Searching for:", query);
+          alert("Search functionality would be implemented here for: " + query);
+        }
+      }
+
+      // Enhanced animations on scroll
+      window.addEventListener("scroll", function () {
+        const cards = document.querySelectorAll(".restaurant-card");
+        const reviews = document.querySelectorAll(".review");
+
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < window.innerHeight - 100) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }
+        });
+
+        reviews.forEach((review) => {
+          const reviewTop = review.getBoundingClientRect().top;
+          if (reviewTop < window.innerHeight - 50) {
+            review.style.opacity = "1";
+            review.style.transform = "translateX(0)";
+          }
+        });
+      });
+
+      // Initialize card animations
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".restaurant-card");
+        const reviews = document.querySelectorAll(".review");
+
+        cards.forEach((card, index) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, index * 300);
+        });
+
+        reviews.forEach((review, index) => {
+          review.style.opacity = "0";
+          review.style.transform = "translateX(-20px)";
+          review.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+          setTimeout(() => {
+            review.style.opacity = "1";
+            review.style.transform = "translateX(0)";
+          }, 1000 + index * 200);
+        });
+      });
+
+      // Review hover effects
+      document.querySelectorAll(".review").forEach((review) => {
+        review.addEventListener("mouseenter", function () {
+          this.style.transform = "translateX(8px) scale(1.02)";
+        });
+
+        review.addEventListener("mouseleave", function () {
+          this.style.transform = "translateX(0) scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Point Finder - Restaurant Directory</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles/restaurant.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="/index.html" class="logo"><i class="fa-solid fa-location-dot">&nbsp;</i>Food Point Finder</a>
+                <div class="tagline">Travel-Based Food Discovery Platform</div>
+            </div>
+
+            <div class="navbar-menu">
+                <ul class="navbar-nav">
+                    <li><a href="" class="nav-link active">Restaurants</a></li>
+                    <!-- <li><a href="#" class="nav-link">Restaurants</a></li> -->
+                    <!-- <li><a href="#" class="nav-link">Cuisines</a></li>
+                    <li><a href="#" class="nav-link">Reviews</a></li>
+                    <li><a href="#" class="nav-link">About</a></li> -->
+                </ul>
+            </div>
+
+            <div class="navbar-actions">
+                <div class="auth-buttons">
+                    <a href="signup.html" class="btn btn-login">Login</a>
+                    <!-- <a href="#" class="btn btn-signup">Sign Up</a> -->
+                    <a href="/index.html" class="btn btn-signup">Home</a>
+                </div>
+
+            </div>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <ul class="mobile-nav">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Restaurants</a></li>
+                    <li><a href="#" class="nav-link">Cuisines</a></li>
+                    <li><a href="#" class="nav-link">Reviews</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                </ul>
+                <div class="mobile-actions">
+                    <a href="#" class="btn btn-login">Login</a>
+                    <a href="#" class="btn btn-signup">Sign Up</a>
+                    <a href="#" class="btn btn-add-restaurant">
+                        <i class="fas fa-plus"></i>
+                        Add Restaurant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    
+      <!-- Main Content -->
+        <main class="main-content">
+            <div class="search-container">
+                <div class="search-box">
+                    <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search for restaurants, cuisines, or locations..."
+                />
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+             </div>
+        </main>
+    
+    
+    
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Discover Amazing Restaurants</h1>
+
+        <!-- Restaurant Listings -->
+        <div class="restaurants-grid">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Bella Vista Italian</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        123 Main Street, Downtown
+                    </div>
+                    <p class="restaurant-description">
+                        Authentic Italian cuisine featuring handmade pasta, wood-fired pizzas, and traditional recipes passed down through generations. Perfect for romantic dinners and family gatherings with an elegant atmosphere.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Sarah M.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Amazing carbonara and the tiramisu was to die for! The atmosphere is so romantic and authentic."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Mike R.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Great atmosphere, authentic flavors. The wood-fired pizza was exceptional."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=600&fit=crop&crop=center" alt="Bella Vista Italian Restaurant" class="restaurant-image">
+            </div>
+
+            
+
+
+            <!-- Restaurant 2 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Sakura Sushi Bar</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        456 Oak Avenue, Midtown
+                    </div>
+                    <p class="restaurant-description">
+                        Fresh sushi and sashimi prepared by master chefs using the finest ingredients. Experience
+                        traditional Japanese dining in a modern, elegant setting with an extensive sake collection.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Emily K.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Best sushi in town! The salmon roll was incredibly fresh and
+                                    the presentation was beautiful."</div>
+
+
+                                </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">James L.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Exceptional quality and presentation. The chef's special
+                                    omakase was unforgettable!"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
+                    alt="Sakura Sushi Bar" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 3 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">The Burger Joint</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        789 Pine Street, Westside
+                    </div>
+                    <p class="restaurant-description">
+                        Gourmet burgers made with locally-sourced beef, artisanal buns, and creative toppings. From
+                        classic cheeseburgers to exotic combinations that will surprise your taste buds.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Alex P.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Juicy burgers and crispy fries. The bacon avocado burger is a
+                                    must-try!"</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Maria G.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Best burger I've had in years. The truffle fries were amazing
+                                    too!"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=600&fit=crop&crop=center"
+                    alt="The Burger Joint" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 4 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Spice Garden Indian</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        321 Elm Drive, Eastside
+                    </div>
+                    <p class="restaurant-description">
+                        Authentic Indian cuisine with rich spices and traditional cooking methods. From mild kormas to
+                        fiery vindaloos, we offer dishes from every region of India in a warm, welcoming atmosphere.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">David W.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Incredible flavors! The butter chicken and garlic naan were
+                                    perfection."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Priya S.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Tastes just like home! The biryani was exceptional and service
+                                    wonderful."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=600&fit=crop&crop=center"
+                    alt="Spice Garden Indian Restaurant" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 5 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Ocean Breeze Seafood</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        555 Harbor View, Waterfront
+                    </div>
+                    <p class="restaurant-description">
+                        Fresh seafood caught daily and prepared with coastal flair. Enjoy stunning ocean views while
+                        savoring lobster, fresh fish, and signature clam chowder in our nautical-themed dining room.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Robert K.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"The lobster was incredibly fresh and the ocean view made it
+                                    perfect!"</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Lisa H.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Amazing clam chowder and grilled salmon. Great atmosphere by
+                                    the water."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=600&fit=crop&crop=center"
+                    alt="Ocean Breeze Seafood" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 6 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Mountain View Steakhouse</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        777 Summit Road, Highlands
+                    </div>
+                    <p class="restaurant-description">
+                        Premium cuts of aged beef grilled to perfection in our rustic mountain lodge setting. Features
+                        an extensive wine cellar and panoramic mountain views for an unforgettable dining experience.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">John T.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Perfect ribeye and the mountain views are breathtaking. Worth
+                                    every penny!"</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Anna M.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Excellent service and the filet mignon was cooked exactly as
+                                    requested."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=600&fit=crop&crop=center"
+                    alt="Mountain View Steakhouse" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 7 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Café Luna French Bistro</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        234 Champs Street, Arts District
+                    </div>
+                    <p class="restaurant-description">
+                        Charming French bistro offering classic Parisian cuisine in an intimate setting. From escargot
+                        to coq au vin, every dish is prepared with authentic French techniques and the finest
+                        ingredients.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Claire D.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Feels like being in Paris! The duck confit was absolutely
+                                    divine."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Pierre L.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Authentic French cuisine and excellent wine selection. Very
+                                    romantic atmosphere."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=600&fit=crop&crop=center"
+                    alt="Café Luna French Bistro" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 8 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Dragon Palace Chinese</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        888 Bamboo Lane, Chinatown
+                    </div>
+                    <p class="restaurant-description">
+                        Traditional Chinese cuisine with modern presentation in an elegant setting. Specializing in Peking duck, dim sum, and regional specialties from across China's diverse culinary landscape.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Wei C.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Authentic flavors and beautiful presentation. The Peking duck was outstanding!"</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Tom B.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Great dim sum and excellent service. The crispy duck was perfectly prepared."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=600&fit=crop&crop=center" alt="Dragon Palace Chinese" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 9 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Verde Garden Vegetarian</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        432 Green Street, Eco District
+                    </div>
+                    <p class="restaurant-description">
+                        Plant-based cuisine that proves vegetarian food can be exciting and flavorful. Fresh,
+                        locally-sourced ingredients transformed into creative dishes in our eco-friendly restaurant
+                        space.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Maya P.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Even as a meat-eater, I was blown away by the creativity and
+                                    flavors!"</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Carlos V.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Fresh, innovative dishes and great atmosphere. The quinoa bowl
+                                    was delicious."</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=600&fit=crop&crop=center"
+                    alt="Verde Garden Vegetarian" class="restaurant-image">
+            </div>
+
+            <!-- Restaurant 10 -->
+            <div class="restaurant-card">
+                <div class="restaurant-info">
+                    <h3 class="restaurant-name">Taco Fiesta Mexican Grill</h3>
+                    <div class="restaurant-address">
+                        <i class="fas fa-map-marker-alt"></i>
+                        678 Salsa Street, Cultural Quarter
+                    </div>
+                    <p class="restaurant-description">
+                        Vibrant Mexican restaurant serving authentic street tacos, fresh guacamole, and traditional
+                        dishes. Colorful décor, live mariachi music, and an extensive tequila selection create a festive
+                        atmosphere.
+                    </p>
+                    <div class="reviews-container">
+                        <div class="reviews-title">
+                            <i class="fas fa-star"></i>
+                            Customer Reviews
+                        </div>
+                        <div class="reviews-list">
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Carlos R.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★★</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Authentic Mexican flavors! The carnitas tacos remind me of
+                                    home in Mexico."</div>
+                            </div>
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="review-author">Jessica F.</div>
+                                    <div class="review-rating">
+                                        <span class="stars">★★★★☆</span>
+                                    </div>
+                                </div>
+                                <div class="review-text">"Fun atmosphere and great margaritas. The guacamole is made
+                                    fresh at your table!"</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=600&fit=crop&crop=center"
+                    alt="Taco Fiesta Mexican Grill" class="restaurant-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="contact.html" class="footer-link">Contact & Support</a>
+            </div>
+            <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
+                <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
+            </a>
+            <div class="footer-copyright">
+                © 2024 Food Point Finder. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleButton = document.querySelector('.mobile-menu-toggle i');
+
+            mobileMenu.classList.toggle('active');
+
+            if (mobileMenu.classList.contains('active')) {
+                toggleButton.classList.remove('fa-bars');
+                toggleButton.classList.add('fa-times');
+            } else {
+                toggleButton.classList.remove('fa-times');
+                toggleButton.classList.add('fa-bars');
+            }
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const toggleButton = document.querySelector('.mobile-menu-toggle');
+
+            if (!event.target.closest('.navbar') && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                const icon = toggleButton.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Add Restaurant button interaction
+        document.querySelector('.btn-add-restaurant').addEventListener('click', function (e) {
+            e.preventDefault();
+            this.style.transform = 'translateY(-2px) scale(1.05)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-1px)';
+            }, 150);
+
+            // Simulate action - in real app would navigate to add restaurant form
+            alert('Add Restaurant feature coming soon! Thank you for your interest in contributing to Food Point Finder.');
+        });
+
+        // Enhanced review hover effects
+        document.querySelectorAll('.review').forEach(review => {
+            review.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateX(8px) scale(1.02)';
+            });
+
+            review.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add scroll-based animations for better UX
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all restaurant cards for scroll animations
+        document.querySelectorAll('.restaurant-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Navbar scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                navbar.style.transform = 'translateY(0)';
+            }
+
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+
+</html>
