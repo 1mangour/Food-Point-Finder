@@ -1,0 +1,129 @@
+.signup-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(32, 33, 36, 0.15);
+  border: 1px solid #f0f0f0;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.submit-btn {
+  background: #1a73e8;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #1557b0;
+  box-shadow: 0 2px 6px rgba(26, 115, 232, 0.3);
+}
+
+.social-signup {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-signup p {
+  color: #5f6368;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-btn {
+  padding: 12px 24px;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  background: white;
+  color: #3c4043;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-btn:hover {
+  background: #f8f9fa;
+  border-color: #1a73e8;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.login-link a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .signup-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .social-buttons {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
