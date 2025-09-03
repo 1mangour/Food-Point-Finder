@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-   <title>Food Point Finder - Discover Amazing Food Spots</title>
-    
-  
+    <title>Food Point Finder - Discover Amazing Food Spots</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -16,20 +12,142 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-     <link rel="stylesheet" href="/styles/custom.css">
-  
-    
-    <!-- <link rel="stylesheet" href="/styles/custom.css"> --- IGNORE ---
-    --- IGNORE --- -->  
+    <link rel="stylesheet" href="/styles/custom.css" />
+    <link rel="stylesheet" href="/styles/feedback.css" />
   </head>
 
   <body>
-    
-    
-    <!-- just add a navbar just to see what happed  -->
+    <!-- Floating Feedback Button -->
+    <button class="floating-feedback-btn" onclick="openFeedbackModal()">
+      <i class="fas fa-comment-dots"></i>
+      <span>Feedback</span>
+    </button>
 
+    <!-- Feedback Modal -->
+    <div class="modal-overlay" id="feedbackModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">We Value Your Feedback!</h2>
+          <p class="modal-subtitle">
+            Help us improve Food Point Finder with your suggestions
+          </p>
+          <button class="modal-close" onclick="closeFeedbackModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
 
-  
+        <div class="modal-body">
+          <!-- Feedback Form -->
+          <form class="feedback-form" id="feedbackForm">
+            <!-- User Type -->
+            <div class="form-group">
+              <label class="form-label required"
+                >Are you a new or returning user?</label
+              >
+              <div class="radio-group">
+                <label class="radio-option" for="newUser">
+                  <input
+                    type="radio"
+                    id="newUser"
+                    name="userType"
+                    value="new"
+                    required
+                  />
+                  <span>New User</span>
+                </label>
+                <label class="radio-option" for="returningUser">
+                  <input
+                    type="radio"
+                    id="returningUser"
+                    name="userType"
+                    value="returning"
+                    required
+                  />
+                  <span>Returning User</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Improvements -->
+            <div class="form-group">
+              <label class="form-label required" for="improvements"
+                >What should we improve?</label
+              >
+              <textarea
+                class="form-textarea"
+                id="improvements"
+                name="improvements"
+                required
+                placeholder="Tell us what features, functionality, or aspects of the platform need improvement..."
+              ></textarea>
+              <div class="form-help-text">
+                Be specific about what could work better
+              </div>
+            </div>
+
+            <!-- Changes -->
+            <div class="form-group">
+              <label class="form-label required" for="changes"
+                >What should we change?</label
+              >
+              <textarea
+                class="form-textarea"
+                id="changes"
+                name="changes"
+                required
+                placeholder="Share what you'd like us to change or do differently..."
+              ></textarea>
+              <div class="form-help-text">
+                Suggest modifications to existing features or new directions
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label class="form-label" for="email">Email (optional)</label>
+              <input
+                type="email"
+                class="form-input"
+                id="email"
+                name="email"
+                placeholder="your.email@example.com"
+              />
+              <div class="form-help-text">
+                Leave your email if you'd like us to follow up on your feedback
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="form-submit">
+              <i class="fas fa-paper-plane"></i>
+              Submit Feedback
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div class="success-message" id="successMessage">
+            <div class="success-icon">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="success-title">Thank You!</h3>
+            <p class="success-text">
+              Your feedback has been submitted successfully. We appreciate you
+              taking the time to help us improve Food Point Finder.
+              <span id="followUpText"></span>
+            </p>
+            <div class="success-actions">
+              <button class="btn btn-signup" onclick="closeFeedbackModal()">
+                Continue Exploring
+              </button>
+              <button class="btn btn-login" onclick="submitAnotherFeedback()">
+                Submit Another
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
       <div class="auth-buttons">
@@ -39,13 +157,14 @@
         </a>
         <a href="/pages/signup.html" class="btn btn-login">Login</a>
         <!-- <a href="#" class="btn btn-signup">Sign Up</a> -->
-        
       </div>
-    </header> 
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
-      <a href="#" class="logo"><i class="fa-solid fa-location-dot"></i> Food Point Finder</a>
+      <a href="#" class="logo"
+        ><i class="fa-solid fa-location-dot"></i> Food Point Finder</a
+      >
       <div class="tagline">Travel-Based Food Discovery Platform</div>
       <div class="search-container">
         <div class="search-box">
@@ -62,96 +181,112 @@
     </main>
 
     <!-- Restaurant Listings -->
-    <section class="restaurants-section"> 
+    <section class="restaurants-section">
       <h2 class="section-title">Featured Restaurants</h2>
       <div class="restaurants-grid">
         <div class="restaurant-card">
-                <div class="restaurant-info">
-                    <h3 class="restaurant-name">Bella Vista Italian</h3>
-                    <div class="restaurant-address">
-                        <i class="fas fa-map-marker-alt"></i>
-                        123 Main Street, Downtown
-                    </div>
-                    <p class="restaurant-description">
-                        Authentic Italian cuisine featuring handmade pasta, wood-fired pizzas, and traditional recipes
-                        passed down through generations. Perfect for romantic dinners and family gatherings.
-                    </p>
-                    <div class="reviews-container">
-                        <div class="reviews-title">
-                            <i class="fas fa-star"></i>
-                            Customer Reviews
-                        </div>
-                        <div class="reviews-list">
-                            <div class="review">
-                                <div class="review-header">
-                                    <div class="review-author">Sarah M.</div>
-                                    <div class="review-rating">
-                                        <span class="stars">★★★★★</span>
-                                    </div>
-                                </div>
-                                <div class="review-text">"Amazing carbonara and the tiramisu was to die for! The
-                                    atmosphere is so romantic and authentic."</div>
-                            </div>
-                            <div class="review">
-                                <div class="review-header">
-                                    <div class="review-author">Mike R.</div>
-                                    <div class="review-rating">
-                                        <span class="stars">★★★★☆</span>
-                                    </div>
-                                </div>
-                                <div class="review-text">"Great atmosphere, authentic flavors. The wood-fired pizza was
-                                    exceptional. Will definitely return!"</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="https://plus.unsplash.com/premium_photo-1672363353881-68c8ff594e25?w=600&h=650&fit=crop&crop=center"
-                    alt="Bella Vista Italian Restaurant" class="restaurant-image">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Bella Vista Italian</h3>
+            <div class="restaurant-address">
+              <i class="fas fa-map-marker-alt"></i>
+              123 Main Street, Downtown
             </div>
+            <p class="restaurant-description">
+              Authentic Italian cuisine featuring handmade pasta, wood-fired
+              pizzas, and traditional recipes passed down through generations.
+              Perfect for romantic dinners and family gatherings.
+            </p>
+            <div class="reviews-container">
+              <div class="reviews-title">
+                <i class="fas fa-star"></i>
+                Customer Reviews
+              </div>
+              <div class="reviews-list">
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Sarah M.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Amazing carbonara and the tiramisu was to die for! The
+                    atmosphere is so romantic and authentic."
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Mike R.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★☆</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Great atmosphere, authentic flavors. The wood-fired pizza
+                    was exceptional. Will definitely return!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://plus.unsplash.com/premium_photo-1672363353881-68c8ff594e25?w=600&h=650&fit=crop&crop=center"
+            alt="Bella Vista Italian Restaurant"
+            class="restaurant-image"
+          />
+        </div>
 
         <div class="restaurant-card">
-                <div class="restaurant-info">
-                    <h3 class="restaurant-name">Sakura Sushi Bar</h3>
-                    <div class="restaurant-address">
-                        <i class="fas fa-map-marker-alt"></i>
-                        456 Oak Avenue, Midtown
-                    </div>
-                    <p class="restaurant-description">
-                        Fresh sushi and sashimi prepared by master chefs using the finest ingredients. Experience
-                        traditional Japanese dining in a modern, elegant setting.
-                    </p>
-                    <div class="reviews-container">
-                        <div class="reviews-title">
-                            <i class="fas fa-star"></i>
-                            Customer Reviews
-                        </div>
-                        <div class="reviews-list">
-                            <div class="review">
-                                <div class="review-header">
-                                    <div class="review-author">Emily K.</div>
-                                    <div class="review-rating">
-                                        <span class="stars">★★★★★</span>
-                                    </div>
-                                </div>
-                                <div class="review-text">"Best sushi in town! The salmon roll was incredibly fresh and
-                                    the presentation was beautiful."</div>
-                            </div>
-                            <div class="review">
-                                <div class="review-header">
-                                    <div class="review-author">James L.</div>
-                                    <div class="review-rating">
-                                        <span class="stars">★★★★★</span>
-                                    </div>
-                                </div>
-                                <div class="review-text">"Exceptional quality and presentation. The chef's special
-                                    omakase was an unforgettable experience!"</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
-                    alt="Sakura Sushi Bar" class="restaurant-image">
+          <div class="restaurant-info">
+            <h3 class="restaurant-name">Sakura Sushi Bar</h3>
+            <div class="restaurant-address">
+              <i class="fas fa-map-marker-alt"></i>
+              456 Oak Avenue, Midtown
             </div>
+            <p class="restaurant-description">
+              Fresh sushi and sashimi prepared by master chefs using the finest
+              ingredients. Experience traditional Japanese dining in a modern,
+              elegant setting.
+            </p>
+            <div class="reviews-container">
+              <div class="reviews-title">
+                <i class="fas fa-star"></i>
+                Customer Reviews
+              </div>
+              <div class="reviews-list">
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Emily K.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Best sushi in town! The salmon roll was incredibly fresh
+                    and the presentation was beautiful."
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">James L.</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★★</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "Exceptional quality and presentation. The chef's special
+                    omakase was an unforgettable experience!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
+            alt="Sakura Sushi Bar"
+            class="restaurant-image"
+          />
+        </div>
 
         <div class="restaurant-card">
           <div class="restaurant-info">
@@ -257,29 +392,27 @@
           />
         </div>
       </div>
-
-        <a href="pages/restaurants.html" class="view-all-btn">View All Restaurants</a>
+      <div class="view-all-container">
+        <a href="pages/restaurants.html" class="view-all-btn"
+          >View All Restaurants</a
+        >
+        <div></div>
+      </div>
     </section>
 
     <!-- Our Motive Section -->
     <section class="motive-section">
       <div class="motive-content">
-        <h2 class="motive-title">Our Motive
-        <p class="motive-text"></h2>
-         Food Point Finder helps food lovers discover hidden gems and local favorites, 
-         from comfort food to fine dining. We connect you to unique dining experiences, 
-         guiding you to explore diverse flavors and uncover your next favorite spot.
-        </p>
-        <!-- <p class="motive-text">
-          Whether you're craving familiar comfort food or looking to adventure
-          into new flavors, we're here to guide you to your next great dining
-          experience. From hole-in-the-wall eateries to fine dining
-          establishments, every restaurant has a story to tell and flavors to
-          share.
-        </p> -->
-        
+        <h2 class="motive-title">Our Motive</h2>
         <p class="motive-text">
-          Join our community of food lovers and discover the joy of finding your new favorite spot, one meal at a time.
+          Food Point Finder helps food lovers discover hidden gems and local
+          favorites, from comfort food to fine dining. We connect you to unique
+          dining experiences, guiding you to explore diverse flavors and uncover
+          your next favorite spot.
+        </p>
+        <p class="motive-text">
+          Join our community of food lovers and discover the joy of finding your
+          new favorite spot, one meal at a time.
         </p>
       </div>
     </section>
@@ -303,6 +436,6 @@
 
     <script src="/js/shared.js"></script>
     <script src="/js/main.js"></script>
-    <!-- Main script for homepage -->
+    <script src="/js/feedback.js"></script>
   </body>
 </html>

@@ -5,15 +5,11 @@
 }
 
 body {
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #ffffff;
   color: #333;
   line-height: 1.6;
 }
-
-
-
-
 
 /* Header */
 .header {
@@ -65,17 +61,15 @@ body {
 }
 
 .view-all-btn {
-
   display: block;
   margin: 0 auto;
   background: #1a73e8;
   border-color: #cfd5dd;
   color: white;
   box-shadow: 0 4px 8px rgba(52, 64, 168, 0.3);
-  
 }
 
-  /* box-shadow: 0 2px 4px rgba(52,168,83,0.2);
+/* box-shadow: 0 2px 4px rgba(52,168,83,0.2);
 } */
 
 .btn-add-restaurant:hover {
@@ -85,15 +79,13 @@ body {
   box-shadow: 0 4px 8px rgba(52, 64, 168, 0.3);
   transform: translateY(-1px);
 }
-.btn-add-restaurant{
-    background: #1a73e8;
-    color: white;
-  
- }
+.btn-add-restaurant {
+  background: #1a73e8;
+  color: white;
+}
 
 .btn-add-restaurant i {
   font-size: 14px;
-  
 }
 
 /* Main Content */
@@ -104,10 +96,12 @@ body {
   min-height: 60vh;
   justify-content: center;
   padding: 0 20px;
+  position: relative;
+  /* background-color: red; */
 }
 
 .logo {
-  font-family: "Product Sans", sans-serif;
+  font-family: 'Product Sans', sans-serif;
   font-size: 48px;
   font-weight: 700;
   color: #1a73e8;
@@ -116,6 +110,9 @@ body {
   cursor: pointer;
   text-decoration: none;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .tagline {
@@ -201,7 +198,6 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   margin-bottom: 60px;
-  
 }
 
 .restaurant-card {
@@ -339,14 +335,18 @@ body {
 
 /* Our Motive Section */
 .motive-section {
-  background: #f8f9fa;
-  padding: 60px 20px;
+  width: 100%;
   text-align: center;
 }
 
 .motive-content {
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
 .motive-title {
@@ -534,12 +534,26 @@ body {
   }
 }
 
-
 /* updated css */
-.view-all-btn{
-    text-align: center;
-     padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 6px;
-    text-decoration: none;
+.view-all-btn {
+  text-align: center;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 24px;
+  text-decoration: none;
+  background: #1a73e8;
+  color: white;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.view-all-btn:hover {
+  background: #1557b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(26, 115, 232, 0.3);
+}
+
+.view-all-container {
+  text-align: center;
+  margin: 40px 0;
 }
