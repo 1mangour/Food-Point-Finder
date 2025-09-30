@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4"
+  },
+  "name": "food-point-finder",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "echo \"Open index.html in your browser or use a static server like live-server.\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1mangour/Food-Point-Finder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1mangour/Food-Point-Finder/issues"
+  },
+  "homepage": "https://github.com/1mangour/Food-Point-Finder#readme"
+}

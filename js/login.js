@@ -1,53 +1,103 @@
-// Login form submission handler
-function handleLogin(event) {
-  event.preventDefault();
+const { AuthHelpers, UIHelpers } = window.supabaseConfig;
 
-  // Here you would typically send the form data to your backend
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
+const showError = (message) => {
+    UIHelpers.showError(message);
+};
 
-  // Add your login logic here
-  console.log('Login data:', data);
+const showSuccess = (message) => {
+    UIHelpers.showSuccess(message);
+};
+
+// Single login function with full Supabase integration
+async function handleLogin(event) {
+    event.preventDefault();
+    
+    // Clear previous messages
+    showError('');
+    showSuccess('');
+    
+    // Get form data
+    const formData = new FormData(event.target);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    
+    // Form validation
+    if (!email || !password) {
+        showError('Please fill in all fields');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = event.target.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Signing In...';
+    submitBtn.disabled = true;
+    
+    try {
+        // Actual Supabase authentication
+        const { data, error } = await AuthHelpers.signIn(email, password);
+        
+        if (error) {
+            showError(error.message);
+        } else {
+            showSuccess('Login successful! Redirecting...');
+            
+            // Store user session info
+            localStorage.setItem('user_email', data.user.email);
+            
+            // Redirect after successful login
+            setTimeout(() => {
+                window.location.href = '../index.html';
+            }, 1500);
+        }
+    } catch (error) {
+        console.error('Login error:', error);
+        showError('An unexpected error occurred. Please try again.');
+    } finally {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 }
 
-// Mobile menu toggle
-function toggleMobileMenu() {
-  const mobileMenu = document.getElementById('mobileMenu');
-  const toggleButton = document.querySelector('.mobile-menu-toggle i');
-
-  mobileMenu.classList.toggle('active');
-
-  if (mobileMenu.classList.contains('active')) {
-    toggleButton.classList.remove('fa-bars');
-    toggleButton.classList.add('fa-times');
-  } else {
-    toggleButton.classList.remove('fa-times');
-    toggleButton.classList.add('fa-bars');
-  }
+// Google login with Supabase OAuth
+async function handleGoogleLogin() {
+    try {
+        const { error } = await window.supabaseConfig.supabase.auth.signInWithOAuth({
+            provider: 'google',
+            options: {
+                redirectTo: window.location.origin + '/index.html'
+            }
+        });
+        
+        if (error) {
+            showError('Google login failed: ' + error.message);
+        }
+    } catch (error) {
+        console.error('Google login error:', error);
+        showError('Google login failed. Please try again.');
+    }
 }
 
-// Form submission handler
-function handleLogin(event) {
-  event.preventDefault();
-
-  // Here you would typically send the form data to your backend
-  alert('Login successful! (Demo only)');
-  // Optionally redirect to home page
-  // window.location.href = '../index.html';
+// Facebook login with Supabase OAuth
+async function handleFacebookLogin() {
+    try {
+        const { error } = await window.supabaseConfig.supabase.auth.signInWithOAuth({
+            provider: 'facebook',
+            options: {
+                redirectTo: window.location.origin + '/index.html'
+            }
+        });
+        
+        if (error) {
+            showError('Facebook login failed: ' + error.message);
+        }
+    } catch (error) {
+        console.error('Facebook login error:', error);
+        showError('Facebook login failed. Please try again.');
+    }
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function (event) {
-  const mobileMenu = document.getElementById('mobileMenu');
-  const toggleButton = document.querySelector('.mobile-menu-toggle');
-
-  if (
-    !event.target.closest('.navbar') &&
-    mobileMenu.classList.contains('active')
-  ) {
-    mobileMenu.classList.remove('active');
-    const icon = toggleButton.querySelector('i');
-    icon.classList.remove('fa-times');
-    icon.classList.add('fa-bars');
-  }
-});
+window.handleLogin = handleLogin;
+window.handleGoogleLogin = handleGoogleLogin;
+window.handleFacebookLogin = handleFacebookLogin;

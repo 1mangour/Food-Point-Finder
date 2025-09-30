@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
     <title>Food Point Finder - Discover Amazing Food Spots</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
@@ -12,12 +13,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="/styles/custom.css" />
-    <link rel="stylesheet" href="/styles/feedback.css" />
+    <link rel="stylesheet" href="styles/custom.css" />
+    <link rel="stylesheet" href="styles/feedback.css" />
   </head>
 
   <body>
-    <!-- Floating Feedback Button -->
+      <!-- Floating Feedback Button -->
     <button class="floating-feedback-btn" onclick="openFeedbackModal()">
       <i class="fas fa-comment-dots"></i>
       <span>Feedback</span>
@@ -28,9 +29,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title">We Value Your Feedback!</h2>
-          <p class="modal-subtitle">
-            Help us improve Food Point Finder with your suggestions
-          </p>
+          <p class="modal-subtitle"> Help us improve Food Point Finder with your suggestions</p>
           <button class="modal-close" onclick="closeFeedbackModal()">
             <i class="fas fa-times"></i>
           </button>
@@ -39,68 +38,26 @@
         <div class="modal-body">
           <!-- Feedback Form -->
           <form class="feedback-form" id="feedbackForm">
-            <!-- User Type -->
-            <div class="form-group">
-              <label class="form-label required"
-                >Are you a new or returning user?</label
-              >
-              <div class="radio-group">
-                <label class="radio-option" for="newUser">
-                  <input
-                    type="radio"
-                    id="newUser"
-                    name="userType"
-                    value="new"
-                    required
-                  />
-                  <span>New User</span>
-                </label>
-                <label class="radio-option" for="returningUser">
-                  <input
-                    type="radio"
-                    id="returningUser"
-                    name="userType"
-                    value="returning"
-                    required
-                  />
-                  <span>Returning User</span>
-                </label>
-              </div>
-            </div>
+       
 
             <!-- Improvements -->
             <div class="form-group">
               <label class="form-label required" for="improvements"
-                >What should we improve?</label
+                >Share Your Feedback</label
               >
               <textarea
                 class="form-textarea"
                 id="improvements"
                 name="improvements"
                 required
-                placeholder="Tell us what features, functionality, or aspects of the platform need improvement..."
+                placeholder="Tell us about your experience useing this platrom..."
               ></textarea>
               <div class="form-help-text">
-                Be specific about what could work better
+                <!-- Be specific about what could work better -->
               </div>
             </div>
 
-            <!-- Changes -->
-            <div class="form-group">
-              <label class="form-label required" for="changes"
-                >What should we change?</label
-              >
-              <textarea
-                class="form-textarea"
-                id="changes"
-                name="changes"
-                required
-                placeholder="Share what you'd like us to change or do differently..."
-              ></textarea>
-              <div class="form-help-text">
-                Suggest modifications to existing features or new directions
-              </div>
-            </div>
+           
 
             <!-- Email -->
             <div class="form-group">
@@ -112,9 +69,9 @@
                 name="email"
                 placeholder="your.email@example.com"
               />
-              <div class="form-help-text">
+              <!-- <div class="form-help-text">
                 Leave your email if you'd like us to follow up on your feedback
-              </div>
+              </div> -->
             </div>
 
             <!-- Submit Button -->
@@ -151,12 +108,12 @@
     <!-- Header -->
     <header class="header">
       <div class="auth-buttons">
-        <a href="/pages/add-restaurant.html" class="btn btn-add-restaurant">
+        <a href="pages/add-restaurant.html" class="btn btn-add-restaurant">
           <i class="fas fa-plus"></i>
           Add Restaurant
         </a>
-        <a href="/pages/signup.html" class="btn btn-login">Login</a>
-        <!-- <a href="#" class="btn btn-signup">Sign Up</a> -->
+        <!-- <a href="pages/login.html" class="btn btn-login">Login</a> -->
+        <a href="pages/signup.html" class="btn btn-signup">Sign Up</a>
       </div>
     </header>
 
@@ -183,18 +140,18 @@
     <!-- Restaurant Listings -->
     <section class="restaurants-section">
       <h2 class="section-title">Featured Restaurants</h2>
+     
       <div class="restaurants-grid">
         <div class="restaurant-card">
           <div class="restaurant-info">
-            <h3 class="restaurant-name">Bella Vista Italian</h3>
+            <h3 class="restaurant-name">Mayuri-The Multicuisine Restaurant</h3>
             <div class="restaurant-address">
               <i class="fas fa-map-marker-alt"></i>
-              123 Main Street, Downtown
+              3VR4+3PG, Math Chandipur, West Bengal,India
             </div>
             <p class="restaurant-description">
-              Authentic Italian cuisine featuring handmade pasta, wood-fired
-              pizzas, and traditional recipes passed down through generations.
-              Perfect for romantic dinners and family gatherings.
+              They serve a wide variety of dishes with great quality and generous portions.
+               The ambiance is fantastic, making it a perfect spot for dining in.
             </p>
             <div class="reviews-container">
               <div class="reviews-title">
@@ -204,26 +161,25 @@
               <div class="reviews-list">
                 <div class="review">
                   <div class="review-header">
-                    <div class="review-author">Sarah M.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Amazing carbonara and the tiramisu was to die for! The
-                    atmosphere is so romantic and authentic."
-                  </div>
-                </div>
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Mike R.</div>
+                    <div class="review-author">Vijay</div>
                     <div class="review-rating">
                       <span class="stars">★★★★☆</span>
                     </div>
                   </div>
                   <div class="review-text">
-                    "Great atmosphere, authentic flavors. The wood-fired pizza
-                    was exceptional. Will definitely return!"
+                    "Price of the items are reasonable. Butter Nun was fluffy and tasty."
+                  </div>
+                </div>
+                <div class="review">
+                  <div class="review-header">
+                    <div class="review-author">Arun</div>
+                    <div class="review-rating">
+                      <span class="stars">★★★★☆</span>
+                    </div>
+                  </div>
+                  <div class="review-text">
+                    "The food was delicious, especially the noodles,
+                     which were perfectly cooked with fresh vegetables"
                   </div>
                 </div>
               </div>
@@ -262,9 +218,10 @@
                     </div>
                   </div>
                   <div class="review-text">
-                    "Best sushi in town! The salmon roll was incredibly fresh
+                    " Best sushi in town! The salmon roll was incredibly fresh
                     and the presentation was beautiful."
                   </div>
+ 
                 </div>
                 <div class="review">
                   <div class="review-header">
@@ -283,8 +240,7 @@
           </div>
           <img
             src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
-            alt="Sakura Sushi Bar"
-            class="restaurant-image"
+            alt="Sakura Sushi Bar"class="restaurant-image"
           />
         </div>
 
@@ -392,6 +348,7 @@
           />
         </div>
       </div>
+      
       <div class="view-all-container">
         <a href="pages/restaurants.html" class="view-all-btn"
           >View All Restaurants</a
@@ -434,8 +391,10 @@
       </div>
     </footer>
 
-    <script src="/js/shared.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/feedback.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config/supabaseclient.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/feedback.js"></script>
+
   </body>
 </html>

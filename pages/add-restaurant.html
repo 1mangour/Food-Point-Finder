@@ -49,6 +49,8 @@
         <h1 class="page-title">Add a New Restaurant</h1>
 
         <div class="add-restaurant-container">
+            <div id="error-message" style="color: red; display: none;"></div>
+            <div id="success-message" style="color: green; display: none;"></div>
             <form class="add-restaurant-form" onsubmit="handleSubmit(event)">
                 <!-- Basic Information -->
                 <div class="form-section">
@@ -190,8 +192,11 @@
     </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/config/supabaseclient.js"></script>
     <script src="/js/shared.js"></script>
     <script src="/js/add-restaurant.js"></script>
+    
     
 </body>
 
