@@ -1,203 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Point Finder - Add Restaurant</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/restaurant.css">
-    <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/add-restaurant.css">
+      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/restaurant.css" />
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/add-restaurant.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <a href="../index.html" class="logo"><i class="fa-solid fa-location-dot"> &nbsp;</i>Food Point Finder</a>
-                <div class="tagline">Travel-Based Food Discovery Platform</div>
-            </div>
-
-            <div class="navbar-menu">
-                <ul class="navbar-nav">
-                    <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-actions">
-                <div class="auth-buttons">
-                    <a href="#" class="btn btn-login">Login</a>
-                    <a href="signup.html" class="btn btn-signup">Sign Up</a>
-                    <a href="../index.html" class="nav-link">Home</a>
-                </div>
-            </div>
-
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a href="../index.html" class="logo"
+            ><i class="fa-solid fa-location-dot"> &nbsp;</i>Food Point Finder</a
+          >
+          <div class="tagline">Travel-Based Food Discovery Platform</div>
         </div>
+
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-actions">
+          <div class="auth-buttons">
+            <a href="#" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Sign Up</a>
+            <a href="../index.html" class="nav-link">Home</a>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <h1 class="page-title">Add a New Restaurant</h1>
+      <h1 class="page-title">Add a New Restaurant</h1>
 
-        <div class="add-restaurant-container">
-            <div id="error-message" style="color: red; display: none;"></div>
-            <div id="success-message" style="color: green; display: none;"></div>
-            <form class="add-restaurant-form" onsubmit="handleSubmit(event)">
-                <!-- Basic Information -->
-                <div class="form-section">
-                    <h3>Basic Information</h3>
-                    <div class="form-group">
-                        <label for="restaurantName">Restaurant Name*</label>
-                        <input type="text" id="restaurantName" name="restaurantName" required placeholder="Enter restaurant name">
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Location*</label>
-                        <input type="text" id="location" name="location" required placeholder="Enter full address">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description*</label>
-                        <textarea id="description" name="description" rows="4" required placeholder="Describe the restaurant, its specialties, and atmosphere"></textarea>
-                    </div>
+      <div class="add-restaurant-container">
+        <div id="error-message" style="color: red; display: none"></div>
+        <div id="success-message" style="color: green; display: none"></div>
+        <form class="add-restaurant-form" onsubmit="handleSubmit(event)">
+          <!-- Basic Information -->
+          <div class="form-section">
+            <h3>Basic Information</h3>
+            <div class="form-group">
+              <label for="restaurantName">Restaurant Name*</label>
+              <input
+                type="text"
+                id="restaurantName"
+                name="restaurantName"
+                required
+                placeholder="Enter restaurant name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="location">Location*</label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                required
+                placeholder="Enter full address"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description">Description*</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="4"
+                required
+                placeholder="Describe the restaurant, its specialties, and atmosphere"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Ratings Section -->
+          <div class="form-section">
+            <h3>Ratings & Reviews</h3>
+
+            <div class="rating-group">
+              <span class="rating-label">Hygiene Rating*</span>
+              <div class="rating-stars">
+                <input
+                  type="radio"
+                  id="hygiene5"
+                  name="hygieneRating"
+                  value="5"
+                  required
+                />
+                <label for="hygiene5">★</label>
+                <input
+                  type="radio"
+                  id="hygiene4"
+                  name="hygieneRating"
+                  value="4"
+                />
+                <label for="hygiene4">★</label>
+                <input
+                  type="radio"
+                  id="hygiene3"
+                  name="hygieneRating"
+                  value="3"
+                />
+                <label for="hygiene3">★</label>
+                <input
+                  type="radio"
+                  id="hygiene2"
+                  name="hygieneRating"
+                  value="2"
+                />
+                <label for="hygiene2">★</label>
+                <input
+                  type="radio"
+                  id="hygiene1"
+                  name="hygieneRating"
+                  value="1"
+                />
+                <label for="hygiene1">★</label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <span class="rating-label">Food Quality*</span>
+              <div class="rating-stars">
+                <input
+                  type="radio"
+                  id="quality5"
+                  name="qualityRating"
+                  value="5"
+                  required
+                />
+                <label for="quality5">★</label>
+                <input
+                  type="radio"
+                  id="quality4"
+                  name="qualityRating"
+                  value="4"
+                />
+                <label for="quality4">★</label>
+                <input
+                  type="radio"
+                  id="quality3"
+                  name="qualityRating"
+                  value="3"
+                />
+                <label for="quality3">★</label>
+                <input
+                  type="radio"
+                  id="quality2"
+                  name="qualityRating"
+                  value="2"
+                />
+                <label for="quality2">★</label>
+                <input
+                  type="radio"
+                  id="quality1"
+                  name="qualityRating"
+                  value="1"
+                />
+                <label for="quality1">★</label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <span class="rating-label">Taste*</span>
+              <div class="rating-stars">
+                <input
+                  type="radio"
+                  id="taste5"
+                  name="tasteRating"
+                  value="5"
+                  required
+                />
+                <label for="taste5">★</label>
+                <input type="radio" id="taste4" name="tasteRating" value="4" />
+                <label for="taste4">★</label>
+                <input type="radio" id="taste3" name="tasteRating" value="3" />
+                <label for="taste3">★</label>
+                <input type="radio" id="taste2" name="tasteRating" value="2" />
+                <label for="taste2">★</label>
+                <input type="radio" id="taste1" name="tasteRating" value="1" />
+                <label for="taste1">★</label>
+              </div>
+            </div>
+
+            <div class="rating-group">
+              <span class="rating-label">Ambience*</span>
+              <div class="rating-stars">
+                <input
+                  type="radio"
+                  id="ambience5"
+                  name="ambienceRating"
+                  value="5"
+                  required
+                />
+                <label for="ambience5">★</label>
+                <input
+                  type="radio"
+                  id="ambience4"
+                  name="ambienceRating"
+                  value="4"
+                />
+                <label for="ambience4">★</label>
+                <input
+                  type="radio"
+                  id="ambience3"
+                  name="ambienceRating"
+                  value="3"
+                />
+                <label for="ambience3">★</label>
+                <input
+                  type="radio"
+                  id="ambience2"
+                  name="ambienceRating"
+                  value="2"
+                />
+                <label for="ambience2">★</label>
+                <input
+                  type="radio"
+                  id="ambience1"
+                  name="ambienceRating"
+                  value="1"
+                />
+                <label for="ambience1">★</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Details -->
+          <div class="form-section">
+            <h3>Additional Details</h3>
+            <div class="form-group">
+              <label for="cuisine">Cuisine Type*</label>
+              <input
+                type="text"
+                id="cuisine"
+                name="cuisine"
+                required
+                placeholder="e.g., Italian, Japanese, Indian"
+              />
+            </div>
+            <div class="form-group">
+              <label for="priceRange">Price Range*</label>
+              <select id="priceRange" name="priceRange" required>
+                <option value="">Select price range</option>
+                <option value="$">$ (Inexpensive)</option>
+                <option value="$$">$$ (Moderate)</option>
+                <option value="$$$">$$$ (Expensive)</option>
+                <option value="$$$$">$$$$ (Very Expensive)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Restaurant Images Section -->
+          <div class="form-section">
+            <h3>Restaurant Images</h3>
+            <div class="image-upload-section">
+              <input
+                type="hidden"
+                id="uploadMethod"
+                name="uploadMethod"
+                value="url"
+              />
+              <!-- <h3>Restaurant Images</h3> -->
+
+              <!-- Tab-style selector -->
+              <div class="upload-method-tabs">
+                <button
+                  type="button"
+                  class="tab-btn active"
+                  onclick="switchUploadMethod('url')"
+                >
+                  📎 Use Image URL
+                </button>
+                <button
+                  type="button"
+                  class="tab-btn"
+                  onclick="switchUploadMethod('file')"
+                >
+                  📁 Upload Files
+                </button>
+              </div>
+
+              <!-- URL Upload Section -->
+              <div id="urlUploadSection" class="upload-section active">
+                <div class="form-group">
+                  <label for="imageUrls">Image URLs (one per line)</label>
+                  <textarea
+                    id="imageUrls"
+                    name="imageUrls"
+                    rows="4"
+                    placeholder="https://example.com/image1.jpg&#10;https://example.com/image2.jpg&#10;https://example.com/image3.jpg"
+                  ></textarea>
+                  <small class="help-text"
+                    >Add 2-3 image URLs, one per line</small
+                  >
                 </div>
 
-                <!-- Ratings Section -->
-                <div class="form-section">
-                    <h3>Ratings & Reviews</h3>
-                    
-                    <div class="rating-group">
-                        <span class="rating-label">Hygiene Rating*</span>
-                        <div class="rating-stars">
-                            <input type="radio" id="hygiene5" name="hygieneRating" value="5" required>
-                            <label for="hygiene5">★</label>
-                            <input type="radio" id="hygiene4" name="hygieneRating" value="4">
-                            <label for="hygiene4">★</label>
-                            <input type="radio" id="hygiene3" name="hygieneRating" value="3">
-                            <label for="hygiene3">★</label>
-                            <input type="radio" id="hygiene2" name="hygieneRating" value="2">
-                            <label for="hygiene2">★</label>
-                            <input type="radio" id="hygiene1" name="hygieneRating" value="1">
-                            <label for="hygiene1">★</label>
-                        </div>
-                    </div>
+                <button
+                  type="button"
+                  class="preview-btn"
+                  onclick="previewUrlImages()"
+                >
+                  Preview Images
+                </button>
+              </div>
 
-                    <div class="rating-group">
-                        <span class="rating-label">Food Quality*</span>
-                        <div class="rating-stars">
-                            <input type="radio" id="quality5" name="qualityRating" value="5" required>
-                            <label for="quality5">★</label>
-                            <input type="radio" id="quality4" name="qualityRating" value="4">
-                            <label for="quality4">★</label>
-                            <input type="radio" id="quality3" name="qualityRating" value="3">
-                            <label for="quality3">★</label>
-                            <input type="radio" id="quality2" name="qualityRating" value="2">
-                            <label for="quality2">★</label>
-                            <input type="radio" id="quality1" name="qualityRating" value="1">
-                            <label for="quality1">★</label>
-                        </div>
-                    </div>
-
-                    <div class="rating-group">
-                        <span class="rating-label">Taste*</span>
-                        <div class="rating-stars">
-                            <input type="radio" id="taste5" name="tasteRating" value="5" required>
-                            <label for="taste5">★</label>
-                            <input type="radio" id="taste4" name="tasteRating" value="4">
-                            <label for="taste4">★</label>
-                            <input type="radio" id="taste3" name="tasteRating" value="3">
-                            <label for="taste3">★</label>
-                            <input type="radio" id="taste2" name="tasteRating" value="2">
-                            <label for="taste2">★</label>
-                            <input type="radio" id="taste1" name="tasteRating" value="1">
-                            <label for="taste1">★</label>
-                        </div>
-                    </div>
-
-                    <div class="rating-group">
-                        <span class="rating-label">Ambience*</span>
-                        <div class="rating-stars">
-                            <input type="radio" id="ambience5" name="ambienceRating" value="5" required>
-                            <label for="ambience5">★</label>
-                            <input type="radio" id="ambience4" name="ambienceRating" value="4">
-                            <label for="ambience4">★</label>
-                            <input type="radio" id="ambience3" name="ambienceRating" value="3">
-                            <label for="ambience3">★</label>
-                            <input type="radio" id="ambience2" name="ambienceRating" value="2">
-                            <label for="ambience2">★</label>
-                            <input type="radio" id="ambience1" name="ambienceRating" value="1">
-                            <label for="ambience1">★</label>
-                        </div>
-                    </div>
+              <!-- File Upload Section -->
+              <div
+                id="fileUploadSection"
+                class="upload-section"
+                style="display: none"
+              >
+                <div class="form-group">
+                  <label for="imageFiles">Upload Images (2-3 images)</label>
+                  <input
+                    type="file"
+                    id="imageFiles"
+                    name="images"
+                    accept="image/*"
+                    multiple
+                    onchange="previewFileImages()"
+                  />
+                  <small class="help-text"
+                    >Select 2-3 restaurant images (JPEG, PNG, WebP)</small
+                  >
                 </div>
+              </div>
 
-                <!-- Additional Details -->
-                <div class="form-section">
-                    <h3>Additional Details</h3>
-                    <div class="form-group">
-                        <label for="cuisine">Cuisine Type*</label>
-                        <input type="text" id="cuisine" name="cuisine" required placeholder="e.g., Italian, Japanese, Indian">
-                    </div>
-                    <div class="form-group">
-                        <label for="priceRange">Price Range*</label>
-                        <select id="priceRange" name="priceRange" required>
-                            <option value="">Select price range</option>
-                            <option value="$">$ (Inexpensive)</option>
-                            <option value="$$">$$ (Moderate)</option>
-                            <option value="$$$">$$$ (Expensive)</option>
-                            <option value="$$$$">$$$$ (Very Expensive)</option>
-                        </select>
-                    </div>
+              <!-- Image Preview Area (shared for both methods) -->
+              <div
+                id="imagePreviewContainer"
+                style="display: none; margin-top: 20px"
+              >
+                <h4>Image Preview:</h4>
+                <div id="imagePreviewGrid" class="image-grid">
+                  <!-- Previews will be inserted here -->
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <!-- Image Upload -->
-                <div class="form-section">
-                    <h3>Restaurant Images</h3>
-                    <div class="form-group">
-                        <div class="image-upload" onclick="document.getElementById('imageInput').click()">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>Click to upload restaurant images</p>
-                            <input type="file" id="imageInput" name="images" accept="image/*" multiple style="display: none">
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn">Add Restaurant</button>
-            </form>
-        </div>
+          <button type="submit" class="submit-btn">Add Restaurant</button>
+        </form>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#" class="footer-link">About Us</a>
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Contact & Support</a>
-            </div>
-            <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
-                <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
-            </a>
-            <div class="footer-copyright">
-                © 2024 Food Point Finder. All rights reserved.
-            </div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Contact & Support</a>
         </div>
+        <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
+          <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
+        </a>
+        <div class="footer-copyright">
+          © 2024 Food Point Finder. All rights reserved.
+        </div>
+      </div>
     </footer>
 
-
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="/config/supabaseclient.js"></script>
-    <script src="/js/shared.js"></script>
-    <script src="/js/add-restaurant.js"></script>
-    
-    
-</body>
-
+    <script src="../config/supabaseclient.js"></script>
+    <script src="../js/shared.js"></script>
+    <script src="../js/add-restaurant.js"></script>
+  </body>
 </html>

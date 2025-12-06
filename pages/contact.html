@@ -1,174 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food Point Finder - Contact & Support</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/styles/restaurant.css">
-    <link rel="stylesheet" href="/styles/contact.css">
-   
-</head>
+      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/restaurant.css" />
+    <link rel="stylesheet" href="../styles/contact.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-brand">
-                <a href="../index.html" class="logo"><i class="fa-solid fa-location-dot">&nbsp;</i>Food Point Finder</a>
-                <div class="tagline">Travel-Based Food Discovery Platform</div>
-            </div>
-
-            <div class="navbar-menu">
-                <ul class="navbar-nav">
-                    <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
-                </ul>
-            </div>
-
-            <div class="navbar-actions">
-                <div class="auth-buttons">
-                    <a href="login.html" class="btn btn-login">Login</a>
-                    <a href="signup.html" class="btn btn-signup">Sign Up</a>
-                    <a href="../index.html" class="nav-link">Home</a>
-                </div>
-            </div>
-
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a href="../index.html" class="logo"
+            ><i class="fa-solid fa-location-dot">&nbsp;</i>Food Point Finder</a
+          >
+          <div class="tagline">Travel-Based Food Discovery Platform</div>
         </div>
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <ul class="mobile-nav">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
-                </ul>
-                <div class="mobile-actions">
-                    <a href="login.html" class="btn btn-login">Login</a>
-                    <a href="signup.html" class="btn btn-signup">Sign Up</a>
-                </div>
-            </div>
+        <div class="navbar-menu">
+          <ul class="navbar-nav">
+            <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
+          </ul>
         </div>
+
+        <div class="navbar-actions">
+          <div class="auth-buttons">
+            <a href="login.html" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Sign Up</a>
+            <a href="../index.html" class="nav-link">Home</a>
+          </div>
+        </div>
+
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+          <ul class="mobile-nav">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
+          </ul>
+          <div class="mobile-actions">
+            <a href="login.html" class="btn btn-login">Login</a>
+            <a href="signup.html" class="btn btn-signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <h1 class="page-title">Contact & Support</h1>
+      <h1 class="page-title">Contact & Support</h1>
 
-        <div class="contact-container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Get in Touch</h2>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info-content">
-                            <h3>Email Us</h3>
-                            <p>foodpointfinder@gmail.com</p>
-                            <p>We typically respond within 24 hours</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div class="info-content">
-                            <h3>Call Us</h3>
-                            <p>+1 (555) 123-4567</p>
-                            <p>Monday to Friday, 9:00 AM - 5:00 PM EST</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-location-dot"></i>
-                        <div class="info-content">
-                            <h3>Visit Us</h3>
-                            <p>123 Food Street</p>
-                            <p>Culinary District, FP 12345</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <h2>Send us a Message</h2>
-                    <form id="contactForm" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
+      <div class="contact-container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <div class="info-content">
+                <h3>Email Us</h3>
+                <p>foodpointfinder@gmail.com</p>
+                <p>We typically respond within 24 hours</p>
+              </div>
             </div>
-
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        How do I add my restaurant to Food Point Finder?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        To add your restaurant, create an account and click on the "Add Restaurant" button. Fill out the required information about your restaurant, including photos, menu, and location details. Our team will review your submission and approve it within 48 hours.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        How can I update my restaurant's information?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Log in to your account, go to your restaurant's profile, and click on the "Edit" button. You can update your restaurant's information, including hours, menu, photos, and contact details. Changes will be reflected immediately after saving.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        How do I report an issue with a restaurant listing?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        If you notice incorrect information or have concerns about a restaurant listing, click the "Report" button on the restaurant's page or contact us directly through our support form. Please provide specific details about the issue so we can address it promptly.
-                    </div>
-                </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div class="info-content">
+                <h3>Call Us</h3>
+                <p>+1 (555) 123-4567</p>
+                <p>Monday to Friday, 9:00 AM - 5:00 PM EST</p>
+              </div>
             </div>
+            <div class="info-item">
+              <i class="fas fa-location-dot"></i>
+              <div class="info-content">
+                <h3>Visit Us</h3>
+                <p>123 Food Street</p>
+                <p>Culinary District, FP 12345</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2>Send us a Message</h2>
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
         </div>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              How do I add my restaurant to Food Point Finder?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              To add your restaurant, create an account and click on the "Add
+              Restaurant" button. Fill out the required information about your
+              restaurant, including photos, menu, and location details. Our team
+              will review your submission and approve it within 48 hours.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              How can I update my restaurant's information?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Log in to your account, go to your restaurant's profile, and click
+              on the "Edit" button. You can update your restaurant's
+              information, including hours, menu, photos, and contact details.
+              Changes will be reflected immediately after saving.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              How do I report an issue with a restaurant listing?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              If you notice incorrect information or have concerns about a
+              restaurant listing, click the "Report" button on the restaurant's
+              page or contact us directly through our support form. Please
+              provide specific details about the issue so we can address it
+              promptly.
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#" class="footer-link">About Us</a>
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="contact.html" class="footer-link">Contact & Support</a>
-            </div>
-            <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
-                <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
-            </a>
-            <div class="footer-copyright">
-                © 2024 Food Point Finder. All rights reserved.
-            </div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="contact.html" class="footer-link">Contact & Support</a>
         </div>
+        <a href="mailto:foodpointfinder@gmail.com" class="footer-email">
+          <i class="fas fa-envelope"></i> foodpointfinder@gmail.com
+        </a>
+        <div class="footer-copyright">
+          © 2024 Food Point Finder. All rights reserved.
+        </div>
+      </div>
     </footer>
-  
-  
-    <script src="/js/shared.js"></script>
-    <script src="/js/contact.js"></script>
-
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/supabaseclient.js"></script>
+    <script src="../js/shared.js"></script>
+    <script src="../js/contact.js"></script>
+  </body>
 </html>

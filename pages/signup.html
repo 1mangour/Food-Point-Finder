@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../styles/restaurant.css" />
     <link rel="stylesheet" href="../styles/signup.css" />
     <link rel="stylesheet" href="../styles/login.css" />
-</head>
+  </head>
 
   <body>
     <!-- Navigation Bar -->
@@ -38,7 +38,7 @@
         <div class="navbar-actions">
           <div class="auth-buttons">
             <!-- <a href="#" class="btn btn-login">Login</a> -->
-            <a href="/pages/login.html" class="btn btn-login">Login</a>
+            <a href="login.html" class="btn btn-login">Login</a>
             <!-- <a href="signup.html" class="btn btn-signup active">Sign Up</a>  -->
             <a href="../index.html" class="nav-link">Home</a>
           </div>
@@ -171,17 +171,9 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/supabaseclient.js"></script>
     <script src="../js/shared.js"></script>
-    <script src="../js/signup.js" type="module"></script>
-    <script type="module">
-      import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
-      const supabase = createClient(
-        'https://mzvwxsdykclubxxdqqtn.supabase.co/',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dnd4c2R5a2NsdWJ4eGRxcXRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDQ1NzksImV4cCI6MjA3MjU4MDU3OX0.W7qea2cNJwJgZWBqQllwNl6azBX0WSaxkDnftPY6ivA'
-      );
-
-      export { supabase };
-    </script>
+    <script src="../js/signup.js"></script>
   </body>
 </html>

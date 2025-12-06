@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Details - Food Point Finder</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../styles/restaurant.css" />
+  </head>
+  <body>
+    <!-- Navbar (copy from restaurants.html) -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a href="../index.html" class="logo">Food Point Finder</a>
+          <div class="tagline">Travel-Based Food Discovery Platform</div>
+        </div>
+        <div class="navbar-actions">
+          <div class="auth-buttons">
+            <a href="signup.html" class="btn btn-login">Login</a>
+            <a href="../index.html" class="btn btn-signup">Home</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="restaurant-detail" id="restaurant-detail">
+        <div class="loading">Loading restaurant details...</div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="contact.html" class="footer-link">Contact & Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/supabaseclient.js"></script>
+    <script src="../js/shared.js"></script>
+    <script src="../js/R_details_page.js"></script>
+  </body>
+</html>
