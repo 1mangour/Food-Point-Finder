@@ -16,13 +16,13 @@ async function submitFeedback(feedbackData) {
   }
 }
 
-// Modal functions
-window.openFeedbackModal = function () {
+// Modal management utilities
+function openFeedbackModal() {
   document.getElementById('feedbackModal').classList.add('active');
   document.body.style.overflow = 'hidden';
-};
+}
 
-window.closeFeedbackModal = function () {
+function closeFeedbackModal() {
   document.getElementById('feedbackModal').classList.remove('active');
   document.body.style.overflow = 'auto';
 
@@ -30,13 +30,34 @@ window.closeFeedbackModal = function () {
   document.getElementById('feedbackForm').style.display = 'flex';
   document.getElementById('successMessage').classList.remove('active');
   document.getElementById('feedbackForm').reset();
-};
+}
 
-window.submitAnotherFeedback = function () {
+function submitAnotherFeedback() {
   document.getElementById('feedbackForm').style.display = 'flex';
   document.getElementById('successMessage').classList.remove('active');
   document.getElementById('feedbackForm').reset();
-};
+}
+
+// Event listener for feedback button
+document.addEventListener('DOMContentLoaded', function () {
+  const feedbackBtn = document.getElementById('feedbackBtn');
+  const feedbackCloseBtn = document.getElementById('feedbackCloseBtn');
+  const continueExploringBtn = document.getElementById('continueExploringBtn');
+  const submitAnotherBtn = document.getElementById('submitAnotherBtn');
+
+  if (feedbackBtn) {
+    feedbackBtn.addEventListener('click', openFeedbackModal);
+  }
+  if (feedbackCloseBtn) {
+    feedbackCloseBtn.addEventListener('click', closeFeedbackModal);
+  }
+  if (continueExploringBtn) {
+    continueExploringBtn.addEventListener('click', closeFeedbackModal);
+  }
+  if (submitAnotherBtn) {
+    submitAnotherBtn.addEventListener('click', submitAnotherFeedback);
+  }
+});
 
 // Form submission
 document
@@ -96,7 +117,7 @@ document
         console.log('Feedback submitted successfully:', feedbackData);
       } else {
         alert(
-          'Error submitting feedback: ' + (result.error || 'Unknown error')
+          'Error submitting feedback: ' + (result.error || 'Unknown error'),
         );
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalText;
@@ -110,13 +131,16 @@ document
   });
 
 // Close modal when clicking outside
-document
-  .getElementById('feedbackModal')
-  .addEventListener('click', function (e) {
-    if (e.target === this) {
-      closeFeedbackModal();
-    }
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  const feedbackModal = document.getElementById('feedbackModal');
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeFeedbackModal();
+      }
+    });
+  }
+});
 
 // Keyboard accessibility for modal
 document.addEventListener('keydown', function (e) {

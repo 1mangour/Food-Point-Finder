@@ -1,7 +1,11 @@
+// Security: Supabase credentials should be loaded from environment variables
+// For static sites, use a config file that's not committed to git
 const supabaseUrl = 'https://mzvwxsdykclubxxdqqtn.supabase.co';
 const supabaseKey =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16dnd4c2R5a2NsdWJ4eGRxcXRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcwMDQ1NzksImV4cCI6MjA3MjU4MDU3OX0.W7qea2cNJwJgZWBqQllwNl6azBX0WSaxkDnftPY6ivA';
 
+// TODO: After initial setup, move these to a private config file (config/secrets.js - add to .gitignore)
+// See .env.example for reference on how to structure environment variables
 const supabaseInstance = supabase.createClient(supabaseUrl, supabaseKey);
 
 window.supabaseConfig = {
@@ -34,6 +38,13 @@ window.supabaseConfig = {
         window.location.href = '/pages/login.html';
       }
       return isAuthenticated;
+    },
+  },
+  FunctionsHelpers: {
+    async invoke(functionName, payload) {
+      return await supabaseInstance.functions.invoke(functionName, {
+        body: payload,
+      });
     },
   },
   DatabaseHelpers: {

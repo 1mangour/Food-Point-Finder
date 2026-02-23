@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,8 +18,8 @@
   </head>
 
   <body>
-      <!-- Floating Feedback Button -->
-    <button class="floating-feedback-btn" onclick="openFeedbackModal()">
+    <!-- Floating Feedback Button -->
+    <button class="floating-feedback-btn" id="feedbackBtn">
       <i class="fas fa-comment-dots"></i>
       <span>Feedback</span>
     </button>
@@ -29,8 +29,10 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title">We Value Your Feedback!</h2>
-          <p class="modal-subtitle"> Help us improve Food Point Finder with your suggestions</p>
-          <button class="modal-close" onclick="closeFeedbackModal()">
+          <p class="modal-subtitle">
+            Help us improve Food Point Finder with your suggestions
+          </p>
+          <button class="modal-close" id="feedbackCloseBtn">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -38,8 +40,6 @@
         <div class="modal-body">
           <!-- Feedback Form -->
           <form class="feedback-form" id="feedbackForm">
-       
-
             <!-- Improvements -->
             <div class="form-group">
               <label class="form-label required" for="improvements"
@@ -56,8 +56,6 @@
                 <!-- Be specific about what could work better -->
               </div>
             </div>
-
-           
 
             <!-- Email -->
             <div class="form-group">
@@ -93,10 +91,10 @@
               <span id="followUpText"></span>
             </p>
             <div class="success-actions">
-              <button class="btn btn-signup" onclick="closeFeedbackModal()">
+              <button class="btn btn-signup" id="continueExploringBtn">
                 Continue Exploring
               </button>
-              <button class="btn btn-login" onclick="submitAnotherFeedback()">
+              <button class="btn btn-login" id="submitAnotherBtn">
                 Submit Another
               </button>
             </div>
@@ -124,14 +122,40 @@
       >
       <div class="tagline">Travel-Based Food Discovery Platform</div>
       <div class="search-container">
-        <div class="search-box">
+        <form class="search-box" id="searchForm" role="search">
+          <!-- <label for="searchInput" class="visually-hidden"
+            >Search for restaurants, cuisines, or locations</label
+          > -->
           <input
             type="text"
             class="search-input"
+            id="searchInput"
+            autofocus
             placeholder="Search for restaurants, cuisines, or locations..."
           />
-          <button class="search-btn">
+          <!-- Google-like 'Use Location' button -->
+          <button
+            type="button"
+            class="location-btn"
+            id="locationBtn"
+            title="Use my current location"
+          >
+            <i class="fas fa-location-crosshairs"></i>
+          </button>
+          <button type="submit" class="search-btn" title="Search">
             <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <!-- Google-like Quick Action Chips -->
+        <div class="quick-filters">
+          <button class="filter-chip btn">
+            <i class="fas fa-map-marker-alt" style="color: #ea4335"></i> Nearby
+          </button>
+          <button class="filter-chip btn">
+            <i class="fas fa-star" style="color: #fbbc04"></i> Top Rated
+          </button>
+          <button class="filter-chip btn">
+            <i class="fas fa-clock" style="color: #34a853"></i> Open Now
           </button>
         </div>
       </div>
@@ -140,215 +164,12 @@
     <!-- Restaurant Listings -->
     <section class="restaurants-section">
       <h2 class="section-title">Featured Restaurants</h2>
-     
+
+      <!-- Dynamically loaded restaurants grid -->
       <div class="restaurants-grid">
-        <div class="restaurant-card">
-          <div class="restaurant-info">
-            <h3 class="restaurant-name">Mayuri-The Multicuisine Restaurant</h3>
-            <div class="restaurant-address">
-              <i class="fas fa-map-marker-alt"></i>
-              3VR4+3PG, Math Chandipur, West Bengal,India
-            </div>
-            <p class="restaurant-description">
-              They serve a wide variety of dishes with great quality and generous portions.
-               The ambiance is fantastic, making it a perfect spot for dining in.
-            </p>
-            <div class="reviews-container">
-              <div class="reviews-title">
-                <i class="fas fa-star"></i>
-                Customer Reviews
-              </div>
-              <div class="reviews-list">
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Vijay</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★☆</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Price of the items are reasonable. Butter Nun was fluffy and tasty."
-                  </div>
-                </div>
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Arun</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★☆</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "The food was delicious, especially the noodles,
-                     which were perfectly cooked with fresh vegetables"
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://plus.unsplash.com/premium_photo-1672363353881-68c8ff594e25?w=600&h=650&fit=crop&crop=center"
-            alt="Bella Vista Italian Restaurant"
-            class="restaurant-image"
-          />
-        </div>
-
-        <div class="restaurant-card">
-          <div class="restaurant-info">
-            <h3 class="restaurant-name">Sakura Sushi Bar</h3>
-            <div class="restaurant-address">
-              <i class="fas fa-map-marker-alt"></i>
-              456 Oak Avenue, Midtown
-            </div>
-            <p class="restaurant-description">
-              Fresh sushi and sashimi prepared by master chefs using the finest
-              ingredients. Experience traditional Japanese dining in a modern,
-              elegant setting.
-            </p>
-            <div class="reviews-container">
-              <div class="reviews-title">
-                <i class="fas fa-star"></i>
-                Customer Reviews
-              </div>
-              <div class="reviews-list">
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Emily K.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    " Best sushi in town! The salmon roll was incredibly fresh
-                    and the presentation was beautiful."
-                  </div>
- 
-                </div>
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">James L.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Exceptional quality and presentation. The chef's special
-                    omakase was an unforgettable experience!"
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=600&fit=crop&crop=center"
-            alt="Sakura Sushi Bar"class="restaurant-image"
-          />
-        </div>
-
-        <div class="restaurant-card">
-          <div class="restaurant-info">
-            <h3 class="restaurant-name">The Burger Joint</h3>
-            <div class="restaurant-address">
-              <i class="fas fa-map-marker-alt"></i>
-              789 Pine Street, Westside
-            </div>
-            <p class="restaurant-description">
-              Gourmet burgers made with locally-sourced beef, artisanal buns,
-              and creative toppings. From classic cheeseburgers to exotic
-              combinations that will surprise your taste buds.
-            </p>
-            <div class="reviews-container">
-              <div class="reviews-title">
-                <i class="fas fa-star"></i>
-                Customer Reviews
-              </div>
-              <div class="reviews-list">
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Alex P.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★☆</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Juicy burgers and crispy fries. The bacon avocado burger is
-                    a must-try! Great casual atmosphere."
-                  </div>
-                </div>
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Maria G.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Best burger I've had in years. The truffle fries were
-                    amazing too. Great value for money!"
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=600&fit=crop&crop=center"
-            alt="The Burger Joint"
-            class="restaurant-image"
-          />
-        </div>
-
-        <div class="restaurant-card">
-          <div class="restaurant-info">
-            <h3 class="restaurant-name">Spice Garden Indian</h3>
-            <div class="restaurant-address">
-              <i class="fas fa-map-marker-alt"></i>
-              321 Elm Drive, Eastside
-            </div>
-            <p class="restaurant-description">
-              Authentic Indian cuisine with rich spices and traditional cooking
-              methods. From mild kormas to fiery vindaloos, we offer dishes from
-              every region of India.
-            </p>
-            <div class="reviews-container">
-              <div class="reviews-title">
-                <i class="fas fa-star"></i>
-                Customer Reviews
-              </div>
-              <div class="reviews-list">
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">David W.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Incredible flavors! The butter chicken and garlic naan were
-                    perfection. Authentic spices!"
-                  </div>
-                </div>
-                <div class="review">
-                  <div class="review-header">
-                    <div class="review-author">Priya S.</div>
-                    <div class="review-rating">
-                      <span class="stars">★★★★★</span>
-                    </div>
-                  </div>
-                  <div class="review-text">
-                    "Tastes just like home! The biryani was exceptional and the
-                    service was wonderful. Highly recommend!"
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=600&fit=crop&crop=center"
-            alt="Spice Garden Indian Restaurant"
-            class="restaurant-image"
-          />
-        </div>
+        <!-- Skeleton loaders will appear while loading -->
       </div>
-      
+
       <div class="view-all-container">
         <a href="pages/restaurants.html" class="view-all-btn"
           >View All Restaurants</a
@@ -394,7 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="config/supabaseclient.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/feedback.js"></script>
-
   </body>
 </html>
